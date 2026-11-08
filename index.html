@@ -115,9 +115,68 @@ dl.skills dd{margin:0;color:var(--muted)}
 .contact p{font-size:1.2rem;max-width:34em;margin:0 0 22px}
 footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px solid var(--line)}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn:hover{transform:none}}
+
+body{overflow-x:clip}
+h1{white-space:nowrap}
+.ch{display:inline-block;animation:rise .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i)*.05s + 1.2s)}
+@keyframes rise{from{opacity:0;transform:translateY(70%) rotate(8deg)}}
+#curtain{position:fixed;inset:0;z-index:50;background:#10222E;color:#F2F5F7;display:grid;place-items:center;font:700 clamp(2rem,8vw,5rem) var(--display);pointer-events:none;animation:wipe 1.1s cubic-bezier(.77,0,.18,1) .8s forwards}
+#curtain span{animation:fadeup .7s ease both}
+@keyframes wipe{to{transform:translateY(-100%)}}
+@keyframes fadeup{from{opacity:0;transform:translateY(20px)}}
+#bar{position:fixed;top:0;left:0;height:3px;width:100%;transform-origin:0 50%;transform:scaleX(0);background:linear-gradient(90deg,var(--accent),#19c3a6,#ff7ab6);z-index:20}
+.glow{position:fixed;left:0;top:0;width:440px;height:440px;margin:-220px 0 0 -220px;border-radius:50%;pointer-events:none;z-index:-1;background:radial-gradient(circle,color-mix(in srgb,var(--accent) 24%,transparent),transparent 65%)}
+html.js .rv{opacity:0;transform:translateY(32px);transition:opacity .8s ease,transform .8s cubic-bezier(.2,.7,.2,1);transition-delay:var(--d,0s)}
+html.js .rv.in{opacity:1;transform:none}
+h2::after{content:"";display:block;height:4px;width:0;margin-top:10px;background:var(--accent);border-radius:4px;transition:width .9s .3s cubic-bezier(.2,.7,.2,1)}
+h2.seen::after{width:72px}
+@keyframes float{50%{transform:translate(34px,-26px) scale(1.12)}}
+.hero{position:relative}
+.hero::before,.hero::after{content:"";position:absolute;border-radius:50%;filter:blur(90px);opacity:.25;z-index:-1;animation:float 11s ease-in-out infinite}
+.hero::before{width:360px;height:360px;left:-8%;top:0;background:var(--accent)}
+.hero::after{width:320px;height:320px;right:2%;bottom:-8%;background:#19c3a6;animation-delay:-5s}
+.net{transition:transform .25s ease-out}
+.net line{stroke-dasharray:4 7;animation:dash 1.4s linear infinite}
+@keyframes dash{to{stroke-dashoffset:-22}}
+.net .ring{fill:none;stroke:var(--accent);stroke-width:2;transform-box:fill-box;transform-origin:center;animation:ring 2.8s ease-out infinite}
+@keyframes ring{from{transform:scale(1);opacity:.7}to{transform:scale(2.2);opacity:0}}
+.net .node circle{transition:transform .25s,fill .2s;transform-box:fill-box;transform-origin:center}
+.net .node:hover circle,.net .node:focus-visible circle{transform:scale(1.3)}
+.stats{display:flex;gap:36px;margin-top:34px}
+.stats b{display:block;font:700 2.4rem/1 var(--display);color:var(--accent)}
+.stats span{font-size:.9rem;color:var(--muted)}
+.btn.primary{background-image:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.35) 50%,transparent 70%);background-size:250% 100%;background-position:200% 0;animation:shine 3.4s ease-in-out infinite}
+@keyframes shine{to{background-position:-100% 0}}
+.btn{transition:transform .2s,box-shadow .2s}
+.btn:hover{box-shadow:0 10px 24px -10px var(--accent)}
+.nav a{position:relative}
+.nav a::after{content:"";position:absolute;left:0;bottom:-5px;height:2px;width:0;background:var(--accent);transition:width .25s}
+.nav a:hover::after{width:100%}
+.marq{overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:16px 0;margin-top:24px}
+.track{display:flex;gap:44px;width:max-content;animation:scroll 32s linear infinite;font:600 1.15rem var(--display);color:var(--muted)}
+.track span::after{content:"✦";margin-left:44px;color:var(--accent)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.marq+.feature{margin-top:0}
+.feature{position:relative;overflow:hidden}
+.feature .wrap{position:relative}
+.feature::before{content:"";position:absolute;inset:0;background-image:radial-gradient(var(--fl) 1.5px,transparent 1.6px);background-size:30px 30px;opacity:.7;animation:drift 24s linear infinite}
+@keyframes drift{to{background-position:30px 30px}}
+.feature::after{content:"";position:absolute;right:-140px;top:-140px;width:460px;height:460px;border-radius:50%;background:radial-gradient(circle,rgba(143,168,255,.35),transparent 65%);animation:float 10s ease-in-out infinite}
+.certs li,.wins li,.proj{transition:transform .3s,box-shadow .3s,border-color .3s}
+.certs li:hover{transform:translateY(-6px);border-color:var(--accent);box-shadow:0 16px 30px -16px color-mix(in srgb,var(--ink) 45%,transparent)}
+.wins li:hover{transform:translateY(-6px) rotate(-.6deg)}
+.gallery figure,.shot-hero{overflow:hidden;border-radius:12px}
+.gallery img,.shot-hero img{transition:transform .6s cubic-bezier(.2,.7,.2,1)}
+.gallery figure:hover img,.shot-hero:hover img{transform:scale(1.04)}
+.slides img.on{animation:kb 7s ease-out both}
+@keyframes kb{from{transform:scale(1)}to{transform:scale(1.08)}}
+@media(max-width:640px){.stats{gap:24px}.stats b{font-size:1.9rem}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}#curtain,.glow,#bar{display:none}}
 </style>
+<script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js")</script>
 </head>
 <body>
+<div id="curtain" aria-hidden="true"><span>Shahad Owadhat</span></div>
 <header class="nav"><div class="wrap">
   <b>Shahad Owadhat</b>
   <nav aria-label="Main"><ul>
@@ -152,7 +211,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
       <circle class="pkt" r="5"><animateMotion dur="3.6s" begin="1.5s" repeatCount="indefinite" path="M230 210 L390 310"/></circle>
       <circle class="pkt" r="5"><animateMotion dur="4.4s" begin="0.3s" repeatCount="indefinite" path="M80 320 L230 210"/></circle>
       <circle class="pkt" r="5"><animateMotion dur="3.8s" begin="2s" repeatCount="indefinite" path="M230 210 L230 385"/></circle>
-      <circle class="hub" cx="230" cy="210" r="46"/><text class="hubt" x="230" y="215" text-anchor="middle">Shahad</text>
+      <circle class="ring" cx="230" cy="210" r="46"/><circle class="ring" style="animation-delay:-1.4s" cx="230" cy="210" r="46"/><circle class="hub" cx="230" cy="210" r="46"/><text class="hubt" x="230" y="215" text-anchor="middle">Shahad</text>
       <a class="node" href="#emaratech"><circle cx="90" cy="70" r="26"/><text x="90" y="40" text-anchor="middle">EmaraTech</text></a>
       <a class="node" href="#foundku"><circle cx="385" cy="80" r="26"/><text x="385" y="50" text-anchor="middle">FoundKU</text></a>
       <a class="node" href="#hospital"><circle cx="390" cy="310" r="26"/><text x="390" y="357" text-anchor="middle">Hospital network</text></a>
@@ -162,6 +221,8 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
   </div>
 
 </div>
+
+<div class="marq" aria-hidden="true"><div class="track"><span>Python</span><span>C</span><span>C++</span><span>C#</span><span>Verilog</span><span>CUDA</span><span>Cisco</span><span>VLANs</span><span>TCP/IP</span><span>Unity</span><span>VR</span><span>AWS</span><span>Django</span><span>MySQL</span><span>MATLAB</span><span>Cryptography</span></div></div>
 
 <section class="feature" id="emaratech" aria-labelledby="et-title">
   <div class="wrap">
@@ -348,6 +409,53 @@ if (reduce) {
   }
   show();
   if (!reduce) setInterval(show, 3500);
+})();
+</script>
+<script>
+(function () {
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+  var d = document;
+  var h = d.querySelector("h1"), t = h.textContent;
+  h.setAttribute("aria-label", t); h.textContent = "";
+  t.split("").forEach(function (c, i) {
+    var s = d.createElement("span"); s.className = "ch"; s.setAttribute("aria-hidden", "true");
+    s.style.setProperty("--i", i); s.textContent = c === " " ? "\u00a0" : c; h.appendChild(s);
+  });
+  var tr = d.querySelector(".track"); tr.innerHTML += tr.innerHTML;
+  function count(el) {
+    Array.prototype.forEach.call(el.querySelectorAll("b"), function (b) {
+      var n = +b.dataset.n, st = null;
+      function f(ts) { st = st || ts; var p = Math.min((ts - st) / 1300, 1); b.textContent = Math.round(n * (1 - Math.pow(1 - p, 3))); if (p < 1) requestAnimationFrame(f); }
+      b.textContent = "0"; requestAnimationFrame(f);
+    });
+  }
+  var io = new IntersectionObserver(function (es) {
+    es.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      var el = e.target; io.unobserve(el);
+      el.classList.add("in", "seen");
+      if (el.matches(".stats")) count(el);
+      setTimeout(function () { el.classList.remove("rv", "in"); }, 1600);
+    });
+  }, { threshold: .15, rootMargin: "0px 0px -40px 0px" });
+  var seen = new Map();
+  d.querySelectorAll("h2,.about,.proj,.cols>div,.certs li,.wins li,dl.skills,.contact p,.contact .btns,.feature .sub,.feature .story,.video,.shot-hero,.gallery figure").forEach(function (el) {
+    var n = seen.get(el.parentNode) || 0; seen.set(el.parentNode, n + 1);
+    el.style.setProperty("--d", (n % 6) * 0.09 + "s"); el.classList.add("rv"); io.observe(el);
+  });
+  var bar = d.createElement("div"); bar.id = "bar"; d.body.appendChild(bar);
+  addEventListener("scroll", function () {
+    var m = d.documentElement.scrollHeight - innerHeight;
+    bar.style.transform = "scaleX(" + (m > 0 ? scrollY / m : 0) + ")";
+  }, { passive: true });
+  if (matchMedia("(pointer:fine)").matches) {
+    var g = d.createElement("div"); g.className = "glow"; d.body.appendChild(g);
+    var net = d.querySelector(".net");
+    addEventListener("pointermove", function (e) {
+      g.style.transform = "translate(" + e.clientX + "px," + e.clientY + "px)";
+      if (net) net.style.transform = "translate(" + (e.clientX / innerWidth - .5) * 18 + "px," + (e.clientY / innerHeight - .5) * 18 + "px)";
+    }, { passive: true });
+  }
 })();
 </script>
 </body>
