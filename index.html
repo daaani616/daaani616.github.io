@@ -81,12 +81,13 @@ h1{font:700 clamp(2.6rem,6.5vw,4.6rem)/1 var(--display);letter-spacing:-.02em;ma
 @media(max-width:820px){.about{grid-template-columns:1fr;gap:28px}.slides{max-width:340px}}
 .slides{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--line);width:100%}
 .slides .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-size:.95rem}
-.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;transition:opacity .5s}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;transition:opacity .8s}
 .slides img.on{opacity:1}
 .certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;list-style:none;margin:0;padding:0}
 .certs li{border:1px solid var(--line);border-radius:12px;padding:16px 20px;background:var(--surface)}
 .certs strong{display:block;font:700 1.05rem/1.35 var(--display);margin-bottom:4px}
 .certs span{color:var(--muted);font-size:.95rem}
+.certs a{display:inline-block;margin-top:10px;font-weight:600;color:var(--accent)}
 section{padding:48px 0;border-top:1px solid var(--line)}
 h2{font:700 clamp(1.7rem,3.5vw,2.3rem)/1.1 var(--display);margin:0 0 28px;letter-spacing:-.01em}
 .proj{display:grid;grid-template-columns:190px 1fr;gap:8px 32px;padding:26px 0;border-bottom:1px solid var(--line)}
@@ -134,7 +135,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
   <div class="hero">
     <div>
       <h1>Shahad Owadhat</h1>
-      <p class="lead">Computer engineer from Kuwait University. My capstone, EmaraTech, a real-time VR platform for architects, won Best Capstone Design Project. I also build networks, embedded systems and cloud apps, and I enjoy teaching others to code.</p>
+      <p class="lead">I’m a Computer Engineering graduate with interests in software development, cloud computing, and computer networking. I enjoy exploring new technologies, solving problems, and building practical projects that turn ideas into reality. I’m always eager to learn, expand my technical skills, and take on new challenges as I grow in the field of engineering.</p>
       <div class="btns">
         <a class="btn primary" href="#projects">See my projects</a>
         <a class="btn" href="mailto:eng.shahadowadhat@gmail.com">Email me</a>
@@ -292,12 +293,12 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
   <section id="certificates">
     <h2>Certificates</h2>
     <ul class="certs">
-      <li><strong><span lang="ar" dir="rtl" style="unicode-bidi:isolate;color:inherit;font-size:inherit">المحاضرة الالكترونية (ما بعد التخرج)</span></strong><span>KSHRD · 4 June 2026</span></li>
-      <li><strong>M2 Vision competition, certificate of participation</strong><span>2026</span></li>
-      <li><strong>First Aid and Emergency Response</strong><span>12 December 2025</span></li>
-      <li><strong>IEEE CS GameDev Workshop</strong><span>10 November 2025</span></li>
-      <li><strong>CCNA: Introduction to Networks</strong><span>18 December 2024</span></li>
-      <li><strong>Fundamentals of Programming in Python (beginners)</strong><span>GDG KWT and WTM · 29 July 2022</span></li>
+      <li><strong><span lang="ar" dir="rtl" style="unicode-bidi:isolate;color:inherit;font-size:inherit">المحاضرة الالكترونية (ما بعد التخرج)</span></strong><span>Kuwait Society for Human Resources Development (KSHRD) · 4 June 2026</span><br><a href="cert-kshrd.pdf" target="_blank" rel="noopener">PDF</a></li>
+      <li><strong>M2 Vision Competition 2026, certificate of participation</strong><span>Management &amp; Marketing Club, Kuwait University · May 2026 · Project: EmaraTech</span><br><a href="cert-m2-vision.pdf" target="_blank" rel="noopener">PDF</a></li>
+      <li><strong>First Aid course</strong><span>Emergency Medical Services, Ministry of Health · 12 November 2025</span><br><a href="cert-first-aid.pdf" target="_blank" rel="noopener">PDF</a></li>
+      <li><strong>IEEE CS GameDev Workshop (2D Unity)</strong><span>IEEE Computer Society, Kuwait University chapter · 10 November 2025</span><br><a href="cert-ieee-gamedev.pdf" target="_blank" rel="noopener">PDF</a></li>
+      <li><strong>CCNA: Introduction to Networks</strong><span>Cisco Networking Academy, offered by Kuwait University · 18 December 2024</span><br><a href="cert-ccna.pdf" target="_blank" rel="noopener">PDF</a></li>
+      <li><strong>Fundamentals of Programming in Python (beginners)</strong><span>GDG Kuwait and Women Techmakers · June 2022</span><br><a href="cert-python-gdg.pdf" target="_blank" rel="noopener">PDF</a></li>
     </ul>
   </section>
 
@@ -345,7 +346,7 @@ if (reduce) {
     i++;
   }
   show();
-  if (!reduce) setInterval(show, 1500);
+  if (!reduce) setInterval(show, 3500);
 })();
 </script>
 </body>
