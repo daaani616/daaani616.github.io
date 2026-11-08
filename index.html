@@ -29,7 +29,7 @@ header.nav{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg
 .nav ul{display:flex;gap:22px;list-style:none;margin:0;padding:0;font-size:.95rem}
 .nav a{text-decoration:none;color:var(--muted)}
 .nav a:hover{color:var(--ink)}
-@media(max-width:640px){.nav ul li:nth-child(n+4){display:none}.nav ul{gap:16px}}
+@media(max-width:640px){.nav ul li.opt{display:none}.nav ul{gap:16px}}
 
 .hero{display:grid;grid-template-columns:1.05fr .95fr;gap:32px;align-items:center;padding:56px 0 40px}
 @media(max-width:820px){.hero{grid-template-columns:1fr}}
@@ -76,6 +76,17 @@ h1{font:700 clamp(2.6rem,6.5vw,4.6rem)/1 var(--display);letter-spacing:-.02em;ma
 .gallery img{display:block;width:100%;height:auto;border-radius:12px;background:var(--fl)}
 .shot-hero figcaption,.gallery figcaption{font-size:.9rem;color:var(--fm);margin-top:8px}
 .feature .tags li{background:transparent;border-color:var(--fl);color:var(--ff)}
+.about{display:grid;grid-template-columns:1.3fr .8fr;gap:48px;align-items:center}
+.about p{font-size:1.15rem;max-width:36em;margin:0}
+@media(max-width:820px){.about{grid-template-columns:1fr;gap:28px}.slides{max-width:340px}}
+.slides{position:relative;aspect-ratio:4/5;border-radius:18px;overflow:hidden;background:var(--surface);border:1px solid var(--line);width:100%}
+.slides .ph{position:absolute;inset:0;display:grid;place-items:center;text-align:center;padding:24px;color:var(--muted);font-size:.95rem}
+.slides img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center top;opacity:0;transition:opacity .5s}
+.slides img.on{opacity:1}
+.certs{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px;list-style:none;margin:0;padding:0}
+.certs li{border:1px solid var(--line);border-radius:12px;padding:16px 20px;background:var(--surface)}
+.certs strong{display:block;font:700 1.05rem/1.35 var(--display);margin-bottom:4px}
+.certs span{color:var(--muted);font-size:.95rem}
 section{padding:48px 0;border-top:1px solid var(--line)}
 h2{font:700 clamp(1.7rem,3.5vw,2.3rem)/1.1 var(--display);margin:0 0 28px;letter-spacing:-.01em}
 .proj{display:grid;grid-template-columns:190px 1fr;gap:8px 32px;padding:26px 0;border-bottom:1px solid var(--line)}
@@ -109,9 +120,11 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
 <header class="nav"><div class="wrap">
   <b>Shahad Owadhat</b>
   <nav aria-label="Main"><ul>
+    <li><a href="#about">About</a></li>
     <li><a href="#projects">Projects</a></li>
-    <li><a href="#background">Background</a></li>
-    <li><a href="#skills">Skills</a></li>
+    <li class="opt"><a href="#background">Background</a></li>
+    <li><a href="#certificates">Certificates</a></li>
+    <li class="opt"><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul></nav>
 </div></header>
@@ -193,6 +206,18 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
 </section>
 
 <div class="wrap">
+  <section id="about">
+    <h2>About me</h2>
+    <div class="about">
+      <p>I’m a Computer Engineering graduate with interests in software development, cloud computing, and computer networking. I enjoy exploring new technologies, solving problems, and building practical projects that turn ideas into reality. I’m always eager to learn, expand my technical skills, and take on new challenges as I grow in the field of engineering.</p>
+      <div class="slides" aria-label="Photos of Shahad">
+        <div class="ph">Your photos go here<br>(about-1.jpg and about-2.jpg)</div>
+        <img src="about-1.jpg" alt="Photo of Shahad">
+        <img src="about-2.jpg" alt="Another photo of Shahad">
+      </div>
+    </div>
+  </section>
+
   <section id="projects">
     <h2>More projects</h2>
 
@@ -255,16 +280,6 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
         </ul>
       </div>
       <div>
-        <h3>Certificates</h3>
-        <ul class="list">
-          <li>CCNA: Introduction to Networks<small>Dec 2024</small></li>
-          <li>IEEE CS GameDev Workshop<small>Nov 2025</small></li>
-          <li>First Aid and Emergency Response<small>Dec 2025</small></li>
-          <li>Fundamentals of Programming in Python, GDG KWT and WTM<small>Jul 2022</small></li>
-          <li>M2 Vision competition, participation<small>2026</small></li>
-        </ul>
-      </div>
-      <div>
         <h3>Community</h3>
         <ul class="list">
           <li>Co-organizer, &gt;_NoLockCode<small>2026 – present · Beginner-friendly programming content and free sessions</small></li>
@@ -272,6 +287,18 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
         </ul>
       </div>
     </div>
+  </section>
+
+  <section id="certificates">
+    <h2>Certificates</h2>
+    <ul class="certs">
+      <li><strong><span lang="ar" dir="rtl" style="unicode-bidi:isolate;color:inherit;font-size:inherit">المحاضرة الالكترونية (ما بعد التخرج)</span></strong><span>KSHRD · 4 June 2026</span></li>
+      <li><strong>M2 Vision competition, certificate of participation</strong><span>2026</span></li>
+      <li><strong>First Aid and Emergency Response</strong><span>12 December 2025</span></li>
+      <li><strong>IEEE CS GameDev Workshop</strong><span>10 November 2025</span></li>
+      <li><strong>CCNA: Introduction to Networks</strong><span>18 December 2024</span></li>
+      <li><strong>Fundamentals of Programming in Python (beginners)</strong><span>GDG KWT and WTM · 29 July 2022</span></li>
+    </ul>
   </section>
 
   <section id="skills">
@@ -291,6 +318,7 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
     <p>I’m looking for a role where I can build useful technology and keep learning across software, systems and networks.</p>
     <div class="btns">
       <a class="btn primary" href="mailto:eng.shahadowadhat@gmail.com">eng.shahadowadhat@gmail.com</a>
+      <a class="btn" href="tel:+96565772717">+965 6577 2717</a>
       <a class="btn" href="https://linkedin.com/in/shahad-owadhat-b72a8b421" rel="noopener">LinkedIn</a>
       <!-- Replace YOUR-USERNAME with your GitHub username, or delete this link -->
       <a class="btn" href="https://github.com/YOUR-USERNAME" rel="noopener">GitHub</a>
@@ -302,9 +330,23 @@ footer{padding:28px 0 40px;color:var(--muted);font-size:.9rem;border-top:1px sol
 <footer><div class="wrap">© 2026 Shahad Owadhat · Kuwait</div></footer>
 
 <script>
-if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+var reduce = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+if (reduce) {
   document.querySelectorAll(".pkt").forEach(function (p) { p.remove(); });
 }
+(function () {
+  var imgs = Array.prototype.slice.call(document.querySelectorAll(".slides img"));
+  var i = 0;
+  imgs.forEach(function (im) { im.addEventListener("error", function () { im.remove(); }); });
+  function show() {
+    imgs = imgs.filter(function (im) { return im.isConnected; });
+    if (!imgs.length) return;
+    imgs.forEach(function (im, k) { im.classList.toggle("on", k === i % imgs.length); });
+    i++;
+  }
+  show();
+  if (!reduce) setInterval(show, 1500);
+})();
 </script>
 </body>
 </html>
