@@ -8,7 +8,7 @@
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🛰️</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Figtree:wght@400;500;600&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#F2F5F7; --surface:#E4ECF2; --ink:#10222E; --muted:#51656F; --line:#C5D3DD; --accent:#2447D8; --accent-ink:#fff;
@@ -188,6 +188,14 @@ h2.seen::after{width:72px}
 #lb .pv{left:18px}
 #lb .nx{right:18px}
 #lb.one .pv,#lb.one .nx{display:none}
+
+#lang{font:600 .9rem var(--body);padding:5px 14px;border-radius:999px;border:1.5px solid var(--ink);background:transparent;color:var(--ink);cursor:pointer;transition:background .2s,color .2s}
+#lang:hover{background:var(--accent);border-color:var(--accent);color:var(--accent-ink)}
+html[lang=ar]{--display:"IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif;--body:"IBM Plex Sans Arabic","Segoe UI",system-ui,sans-serif}
+html[lang=ar] *{letter-spacing:0!important}
+html[dir=rtl] .nav a::after{left:auto;right:0}
+html[dir=rtl] dl.skills dd{unicode-bidi:plaintext}
+.marq{direction:ltr}
 </style>
 <script>if(!matchMedia("(prefers-reduced-motion: reduce)").matches)document.documentElement.classList.add("js")</script>
 </head>
@@ -202,6 +210,7 @@ h2.seen::after{width:72px}
     <li><a href="#certificates">Certificates</a></li>
     <li class="opt"><a href="#skills">Skills</a></li>
     <li><a href="#contact">Contact</a></li>
+    <li><button id="lang" type="button" aria-label="Switch language">العربية</button></li>
   </ul></nav>
 </div></header>
 
@@ -213,6 +222,7 @@ h2.seen::after{width:72px}
       <p class="lead">A Computer Engineering graduate with interests in software development, cloud computing, and computer networking.</p>
       <div class="btns">
         <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="Shahad-Owadhat-CV.pdf" download>Download CV</a>
         <a class="btn" href="mailto:eng.shahadowadhat@gmail.com">Email me</a>
       </div>
     </div>
@@ -406,10 +416,10 @@ h2.seen::after{width:72px}
     <p>I’m looking for a role where I can build useful technology and keep learning across software, systems and networks.</p>
     <div class="btns">
       <a class="btn primary" href="mailto:eng.shahadowadhat@gmail.com">eng.shahadowadhat@gmail.com</a>
+      <a class="btn" href="Shahad-Owadhat-CV.pdf" download>Download CV</a>
       <a class="btn" href="tel:+96565772717">+965 6577 2717</a>
       <a class="btn" href="https://linkedin.com/in/shahad-owadhat-b72a8b421" rel="noopener">LinkedIn</a>
-      <!-- Replace YOUR-USERNAME with your GitHub username, or delete this link -->
-      <a class="btn" href="https://github.com/YOUR-USERNAME" rel="noopener">GitHub</a>
+      <a class="btn" href="https://github.com/shahad-owadhat" rel="noopener">GitHub</a>
     </div>
   </section>
 </div>
@@ -526,6 +536,33 @@ if (reduce) {
     box.addEventListener("keydown", function (e) { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openIt(); } });
     if (auto) setInterval(next, 3500);
   });
+})();
+</script>
+<script>
+(function () {
+  var AR = {"Projects": "المشاريع", "About": "نبذة", "Background": "الخلفية", "Certificates": "الشهادات", "Skills": "المهارات", "Contact": "التواصل", "Shahad Owadhat": "شهد عوضات", "© 2026 Shahad Owadhat · Kuwait": "© 2026 شهد عوضات · الكويت", "A Computer Engineering graduate with interests in software development, cloud computing, and computer networking.": "خريجة هندسة حاسوب ولديّ اهتمام بتطوير البرمجيات والحوسبة السحابية وشبكات الحاسوب.", "See my projects": "شاهد مشاريعي", "Email me": "راسلني", "Download CV": "تحميل السيرة الذاتية", "Shahad": "شهد", "Hospital network": "شبكة المستشفى", "TCP chat": "محادثة TCP", "Embedded + OS": "مدمجة + نظم تشغيل", "Cryptography": "التشفير", "A real-time VR platform that turns architectural models into spaces you can walk through, built as my capstone and chosen the best in my department.": "منصة واقع افتراضي فورية تحوّل النماذج المعمارية إلى مساحات يمكنك التجول داخلها، نفّذتُها كمشروع تخرج واختيرت الأفضل في قسمي.", "Best Capstone Design Project": "أفضل مشروع تخرج هندسي", "Computer Engineering department, Kuwait University · KFAS, 2026": "قسم هندسة الحاسوب، جامعة الكويت · مؤسسة الكويت للتقدم العلمي، 2026", "Digital Transformation Award": "جائزة التحول الرقمي", "Kuwait Petroleum Corporation (KPC), 49th Engineering Design Exhibition, January 2026": "مؤسسة البترول الكويتية، معرض التصميم الهندسي 49، يناير 2026", "Digital Transformation Exhibition": "معرض التحول الرقمي", "Represented Kuwait University under the patronage of the Minister of Oil, January 2026": "مثّلتُ جامعة الكويت تحت رعاية وزير النفط، يناير 2026", "Architects and clients usually review a design through drawings and screenshots. EmaraTech lets them step inside it instead. It takes a Revit model, converts it to a VR environment in seconds, and keeps everyone in the same live view as the design changes.": "يعتمد المعماريون والعملاء عادةً على المخططات ولقطات الشاشة لمراجعة التصميم. تتيح لهم عمارة تيك دخول التصميم بدلًا من ذلك: تحوّل نموذج Revit إلى بيئة واقع افتراضي في ثوانٍ، وتُبقي الجميع في المشهد المباشر نفسه أثناء تغيّر التصميم.", "I worked on model processing, live synchronization and user interaction. At the expo, the people we spoke to were most interested in how fast the conversion is and in the electrical, plumbing and HVAC plans the system generates automatically.": "عملتُ على معالجة النماذج والمزامنة الفورية وتفاعل المستخدم. وفي المعرض، كان اهتمام من تحدثنا معهم منصبًّا على سرعة التحويل وعلى مخططات الكهرباء والسباكة والتكييف التي يولّدها النظام تلقائيًا.", "Real-time sync": "مزامنة فورية", "What it does": "ماذا يفعل", "Revit-to-VR conversion in seconds": "تحويل Revit إلى واقع افتراضي في ثوانٍ", "Cost estimation": "تقدير التكلفة", "Carbon footprint estimate": "تقدير البصمة الكربونية", "Automatic electrical, plumbing and HVAC planning": "تخطيط تلقائي للكهرباء والسباكة والتكييف", "Blockchain logging of changes": "تسجيل التغييرات باستخدام البلوكتشين", "Watch the demo": "شاهد العرض التجريبي", "Open the video on YouTube": "افتح الفيديو على يوتيوب", "Receiving the KFAS award for best Computer Engineering project": "استلام جائزة مؤسسة الكويت للتقدم العلمي لأفضل مشروع في هندسة الحاسوب", "Receiving the KPC Digital Transformation Award": "استلام جائزة التحول الرقمي من مؤسسة البترول الكويتية", "The project poster: objectives, design, methods and results": "ملصق المشروع: الأهداف والتصميم والمنهجية والنتائج", "Our booth: Revit and Unity on screen, VR headset ready": "جناحنا: Revit وUnity على الشاشة ونظارة الواقع الافتراضي جاهزة", "The EmaraTech award trophies": "دروع جوائز عمارة تيك", "More projects": "مشاريع أخرى", "AWS cloud project": "مشروع سحابي على AWS", "Jul – Aug 2026": "يوليو – أغسطس 2026", "FoundKU: lost and found for Kuwait University": "FoundKU: نظام المفقودات لجامعة الكويت", "A web app where students report and search for lost items. The site is served through CloudFront and Amazon S3, and requests go through API Gateway and Lambda to a DynamoDB database.": "تطبيق ويب يتيح للطلبة الإبلاغ عن الأغراض المفقودة والبحث عنها. يُقدَّم الموقع عبر CloudFront وAmazon S3، وتمر الطلبات عبر API Gateway وLambda إلى قاعدة بيانات DynamoDB.", "Advanced Networks": "الشبكات المتقدمة", "Mar – Apr 2026": "مارس – أبريل 2026", "Network architecture for a multi-floor hospital": "تصميم شبكة لمستشفى متعدد الطوابق", "Designed a secure, scalable Cisco network for a hospital and its remote clinics: a three-tier core, distribution and access design with VLAN segmentation, redundancy, wireless, firewalls and WAN links. I contributed to topology, VLAN planning, device selection, IP addressing and security following Cisco SAFE.": "صمّمتُ شبكة Cisco آمنة وقابلة للتوسع لمستشفى وعياداته البعيدة: بنية من ثلاث طبقات (النواة والتوزيع والوصول) مع تقسيم VLAN والتكرار الاحتياطي والشبكة اللاسلكية وجدران الحماية وروابط WAN. ساهمتُ في تصميم المخطط وتخطيط VLAN واختيار الأجهزة وعناوين IP والأمن وفق مبادئ Cisco SAFE.", "IP addressing": "عناوين IP", "Operating Systems course": "مقرر نظم التشغيل", "Apr 2026": "أبريل 2026", "Round Robin CPU scheduler simulator": "محاكي جدولة المعالج بخوارزمية Round Robin", "A Python simulator for an Operating Systems course. It models process scheduling, preemption and ready queues, and reports waiting and turnaround times.": "محاكي بلغة Python لمقرر نظم التشغيل. يمثّل جدولة العمليات والمقاطعة وطوابير الجاهزية، ويحسب أزمنة الانتظار والإنجاز.", "Operating systems": "نظم التشغيل", "Networks course": "مقرر الشبكات", "Oct – Dec 2024": "أكتوبر – ديسمبر 2024", "Non-blocking chat system over pipelined TCP": "نظام محادثة غير حاجب عبر TCP المتسلسل", "A client–server chat built with Python sockets and non-blocking I/O. It handles pipelined TCP messages, connection multiplexing, buffering and errors, serving many clients at once without threads.": "محادثة بين عميل وخادم مبنية بمقابس Python وإدخال/إخراج غير حاجب. تعالج رسائل TCP المتسلسلة وتعدد الاتصالات والتخزين المؤقت والأخطاء، وتخدم عدة عملاء في آن واحد دون خيوط.", "Embedded Systems course": "مقرر الأنظمة المدمجة", "Oct 2024": "أكتوبر 2024", "Atbash cipher on a microcontroller": "تشفير أتباش على متحكم دقيق", "A simple Atbash cipher running on a microcontroller for an Embedded Systems course.": "تشفير أتباش بسيط يعمل على متحكم دقيق ضمن مقرر الأنظمة المدمجة.", "Embedded": "مدمجة", "About me": "نبذة عني", "I’m a Computer Engineering graduate with interests in software development, cloud computing, and computer networking. I enjoy exploring new technologies, solving problems, and building practical projects that turn ideas into reality. I’m always eager to learn, expand my technical skills, and take on new challenges as I grow in the field of engineering.": "خريجة هندسة حاسوب ولديّ اهتمام بتطوير البرمجيات والحوسبة السحابية وشبكات الحاسوب. أستمتع باستكشاف التقنيات الجديدة وحل المشكلات وبناء مشاريع عملية تحوّل الأفكار إلى واقع. أسعى دائمًا إلى التعلّم وتنمية مهاراتي التقنية وخوض تحديات جديدة وأنا أتقدم في مجال الهندسة.", "Education": "التعليم", "Bachelor of Computer Engineering, Kuwait University": "بكالوريوس هندسة الحاسوب، جامعة الكويت", "Coursework: Advanced Computer Networks, Cryptography, Database Systems, Embedded Systems, Digital Logic Design, Software Engineering": "المقررات: شبكات الحاسوب المتقدمة، التشفير، قواعد البيانات، الأنظمة المدمجة، تصميم المنطق الرقمي، هندسة البرمجيات", "Awards": "الجوائز", "KPC, 2026": "مؤسسة البترول الكويتية، 2026", "Best Capstone Design Project, Computer Engineering": "أفضل مشروع تخرج، هندسة الحاسوب", "KFAS, 2026": "مؤسسة الكويت للتقدم العلمي، 2026", "Dean’s Honor List": "قائمة شرف العميد", "Kuwait University, 2026": "جامعة الكويت، 2026", "Activities": "الأنشطة", "Member, Women in CyberSecurity Middle East (WiCSME)": "عضوة في Women in CyberSecurity Middle East (WiCSME)", "Oct 2026 – present · Kuwait": "أكتوبر 2026 – الآن · الكويت", "Co-organizer, >_NoLockCode": "منظِّمة مشاركة، >_NoLockCode", "2026 – present · Beginner-friendly programming content and free sessions": "2026 – الآن · محتوى برمجي للمبتدئين وجلسات مجانية", "Kuwait University representative, Digital Transformation Exhibition": "ممثلة جامعة الكويت في معرض التحول الرقمي", "Jan 2026 · Ministry of Oil": "يناير 2026 · وزارة النفط", "Kuwait Society for Human Resources Development (KSHRD) · 4 June 2026": "الجمعية الكويتية لتطوير الموارد البشرية (KSHRD) · 4 يونيو 2026", "M2 Vision Competition 2026, certificate of participation": "مسابقة M2 Vision 2026، شهادة مشاركة", "Management & Marketing Club, Kuwait University · May 2026 · Project: EmaraTech": "نادي الإدارة والتسويق، جامعة الكويت · مايو 2026 · المشروع: عمارة تيك", "First Aid course": "دورة الإسعافات الأولية", "Emergency Medical Services, Ministry of Health · 12 November 2025": "إدارة الطوارئ الطبية، وزارة الصحة · 12 نوفمبر 2025", "IEEE CS GameDev Workshop (2D Unity)": "ورشة IEEE CS لتطوير الألعاب (Unity ثنائي الأبعاد)", "IEEE Computer Society, Kuwait University chapter · 10 November 2025": "IEEE Computer Society، فرع جامعة الكويت · 10 نوفمبر 2025", "Cisco Networking Academy, offered by Kuwait University · 18 December 2024": "أكاديمية Cisco للشبكات، بتقديم جامعة الكويت · 18 ديسمبر 2024", "Fundamentals of Programming in Python (beginners)": "أساسيات البرمجة بلغة بايثون (للمبتدئين)", "GDG Kuwait and Women Techmakers · June 2022": "GDG الكويت وWomen Techmakers · يونيو 2022", "Languages": "لغات البرمجة", "Networking": "الشبكات", "TCP/IP, VLANs, network design, Cisco networking fundamentals, cryptography fundamentals": "TCP/IP وVLAN وتصميم الشبكات وأساسيات شبكات Cisco وأساسيات التشفير", "Web and games": "الويب والألعاب", "HTML, Django, Unity (a 2D game and a VR game)": "HTML وDjango وUnity (لعبة ثنائية الأبعاد ولعبة واقع افتراضي)", "Tools": "الأدوات", "Teaching": "التدريس", "Programming tutoring and workshop organizing": "تدريس البرمجة وتنظيم الورش", "Spoken languages": "اللغات", "Arabic, English": "العربية، الإنجليزية", "Let’s talk": "لنتحدث", "I’m looking for a role where I can build useful technology and keep learning across software, systems and networks.": "أبحث عن وظيفة أبني فيها تقنيات مفيدة وأواصل التعلّم في البرمجيات والأنظمة والشبكات."};
+  var btn = document.getElementById("lang"), h1 = document.querySelector("h1"), h1html = null, saved = [], ttl = document.title, isAr = false;
+  function setLang(ar) {
+    isAr = ar; var el = document.documentElement; el.lang = ar ? "ar" : "en"; el.dir = ar ? "rtl" : "ltr";
+    if (ar) {
+      var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT), n;
+      while ((n = w.nextNode())) {
+        var p = n.parentNode;
+        if (!p || /^(SCRIPT|STYLE)$/i.test(p.nodeName) || p.closest("#lang,h1")) continue;
+        var k = n.nodeValue.replace(/\s+/g, " ").trim();
+        if (AR[k]) { saved.push([n, n.nodeValue]); n.nodeValue = AR[k]; }
+      }
+      h1html = h1.innerHTML; h1.textContent = "مرحبًا، أنا شهد عوضات";
+      document.title = "شهد عوضات | مهندسة حاسوب"; btn.textContent = "English";
+    } else {
+      saved.forEach(function (p) { p[0].nodeValue = p[1]; }); saved = [];
+      if (h1html !== null) h1.innerHTML = h1html;
+      document.title = ttl; btn.textContent = "العربية";
+    }
+    try { localStorage.setItem("lang", ar ? "ar" : "en"); } catch (e) {}
+  }
+  btn.addEventListener("click", function () { setLang(!isAr); });
+  try { if (localStorage.getItem("lang") === "ar") setLang(true); } catch (e) {}
 })();
 </script>
 </body>
